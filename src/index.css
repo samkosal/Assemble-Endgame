@@ -42,19 +42,36 @@ section.game-status {
 section.game-status > p {
     margin: 5px;
 }
+
 section.game-status > h2 {
     font-size: 1.25rem;
     margin: 5px
 }
+
 section.language-chips {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
     justify-content: center;
     max-width: 350px;
+    margin-bottom: 36px;
 }
 
 span.chip {
     border-radius: 3px;
     padding: 4.5px;
+}
+
+section.word {
+    display: flex;
+    justify-content: center;
+}
+
+section.word > span {
+    height: 40px;
+    width: 40px;
+    background-color: #323232;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
