@@ -4,22 +4,17 @@ export default function AssemblyEndgame() {
 
     const [currentWord, setCurrentWord] = useState("react")
 
+    const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+    const keyboardElements = alphabet.split("").map(letter => (
+        <button key={letter}>{letter.toUpperCase()}</button>
+    ))
     // learn something new 
     // array of spans → render directly
     // array of letters → map to spans before rendering
-    // const letterElements = (() => {
-    //     const elems = []
-    //     for (let i = 0; i < currentWord.length; i++) {
-    //         elems.push(
-    //             <span key={i}>{currentWord[i]}</span>
-    //         )
-    //     }
-    //     console.log(elems)
-    //     return elems
-    // })
-    const letterElements = currentWord.split("").map(current => {
-        return <span>{current.toUpperCase()}</span>
-    })
+    const letterElements = currentWord.split("").map((letter, index) => (
+        <span key={index}>{letter.toUpperCase()}</span>
+    ))
 
     const languageElements = languages.map(lang => {
         const styles = {
@@ -55,6 +50,10 @@ export default function AssemblyEndgame() {
 
             <section className="word">
                 {letterElements}
+            </section>
+
+            <section className="keyboard">
+                {keyboardElements}
             </section>
         </main>
     )
