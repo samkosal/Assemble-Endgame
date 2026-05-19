@@ -43,7 +43,7 @@ export default function AssemblyEndgame() {
     // array of spans → render directly
     // array of letters → map to spans before rendering 
     const letterElements = currentWord.split("").map((letter, index) => (
-        <span key={index}>{letter.toUpperCase()}</span>
+        <span key={index}>{guessedLetters.includes(letter) && letter.toUpperCase()}</span>
     ))
 
     const languageElements = languages.map(lang => {
